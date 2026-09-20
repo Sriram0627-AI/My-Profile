@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sriram S | Generative AI Developer &amp; AI Data Analyst</title>
+<meta name="description" content="Portfolio of Sriram S, an aspiring Generative AI developer and AI data analyst studying Computer Science with Artificial Intelligence in Chennai.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%94%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3F6F8;
+    --sky: #DCE8EF;
+    --surface: #FFFFFF;
+    --ink: #123047;
+    --muted: #4A6274;
+    --line: #CFDBE3;
+    --glacier: #8DB9D1;
+    --aurora: #2FB79A;
+    --link: #0C7563;
+    --btn-bg: #123047;
+    --btn-ink: #F3F6F8;
+    --aurora-opacity: .5;
+    --far: rgba(141, 185, 209, .45);
+    --mid: rgba(96, 148, 176, .55);
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Hanken Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B1620; --sky: #10283A; --surface: #112230; --ink: #E6EEF3; --muted: #93A8B7;
+      --line: #21384A; --glacier: #5E93B0; --aurora: #55D6B8; --link: #55D6B8;
+      --btn-bg: #E6EEF3; --btn-ink: #0B1620; --aurora-opacity: .55;
+      --far: rgba(94, 147, 176, .28); --mid: rgba(60, 110, 138, .5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B1620; --sky: #10283A; --surface: #112230; --ink: #E6EEF3; --muted: #93A8B7;
+    --line: #21384A; --glacier: #5E93B0; --aurora: #55D6B8; --link: #55D6B8;
+    --btn-bg: #E6EEF3; --btn-ink: #0B1620; --aurora-opacity: .55;
+    --far: rgba(94, 147, 176, .28); --mid: rgba(60, 110, 138, .5);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--aurora); outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(1120px, 100% - 3rem); margin-inline: auto; }
+
+  /* ---------- Header ---------- */
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 1rem; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 1.15rem; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+  nav ul { display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
+  nav a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; padding: .4rem 0; }
+  nav a:hover { color: var(--ink); }
+  .theme-btn {
+    display: inline-grid; place-items: center; width: 40px; height: 40px;
+    border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+  }
+  .theme-btn:hover { border-color: var(--glacier); }
+  .theme-btn svg { width: 18px; height: 18px; }
+  .right { display: flex; align-items: center; gap: 1.4rem; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; overflow: hidden; isolation: isolate;
+    background: linear-gradient(180deg, var(--sky) 0%, var(--bg) 92%);
+    min-height: min(760px, 92vh);
+    display: flex; align-items: center;
+  }
+  .aurora { position: absolute; inset: -10% -10% 20% -10%; z-index: -2; opacity: var(--aurora-opacity); filter: blur(70px); pointer-events: none; }
+  .aurora i { position: absolute; display: block; border-radius: 50%; }
+  .aurora i:nth-child(1) { width: 46%; height: 46%; left: 6%; top: 10%; background: var(--aurora); animation: drift1 22s ease-in-out infinite alternate; }
+  .aurora i:nth-child(2) { width: 40%; height: 40%; left: 38%; top: 0; background: var(--glacier); animation: drift2 26s ease-in-out infinite alternate; }
+  .aurora i:nth-child(3) { width: 34%; height: 34%; left: 64%; top: 22%; background: var(--aurora); opacity: .7; animation: drift3 30s ease-in-out infinite alternate; }
+  @keyframes drift1 { to { transform: translate(14%, 12%) scale(1.15); } }
+  @keyframes drift2 { to { transform: translate(-18%, 18%) scale(.9); } }
+  @keyframes drift3 { to { transform: translate(-12%, -8%) scale(1.2); } }
+
+  .ridge { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: clamp(150px, 26vw, 320px); z-index: -1; display: block; }
+  .ridge .far { fill: var(--far); }
+  .ridge .mid { fill: var(--mid); }
+  .ridge .front { fill: var(--bg); }
+
+  .hero-inner { padding: 5.5rem 0 11rem; }
+  .hello { font-size: 1.05rem; color: var(--muted); margin: 0 0 1rem; font-weight: 500; }
+  h1 {
+    font-family: var(--display); font-weight: 700;
+    font-size: clamp(3.6rem, 11vw, 8.4rem);
+    line-height: .92; letter-spacing: -.035em; margin: 0 0 1.6rem;
+    font-variation-settings: "opsz" 96;
+  }
+  .role { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 2.6vw, 1.85rem); line-height: 1.25; margin: 0 0 1.1rem; letter-spacing: -.01em; }
+  .lede { max-width: 34rem; color: var(--muted); margin: 0 0 2.2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.4rem;
+    border-radius: 999px; font-weight: 600; font-size: 1rem; text-decoration: none;
+    border: 1.5px solid var(--btn-bg); transition: background .2s, color .2s, border-color .2s;
+  }
+  .btn.solid { background: var(--btn-bg); color: var(--btn-ink); }
+  .btn.solid:hover { background: var(--link); border-color: var(--link); color: #fff; }
+  .btn.ghost { color: var(--ink); background: transparent; }
+  .btn.ghost:hover { border-color: var(--link); color: var(--link); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* One orchestrated load sequence, hero only */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-inner > * { opacity: 0; transform: translateY(18px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+    .hero-inner > *:nth-child(1) { animation-delay: .05s; }
+    .hero-inner > *:nth-child(2) { animation-delay: .15s; }
+    .hero-inner > *:nth-child(3) { animation-delay: .3s; }
+    .hero-inner > *:nth-child(4) { animation-delay: .42s; }
+    .hero-inner > *:nth-child(5) { animation-delay: .54s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+  @media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } html { scroll-behavior: auto; } }
+
+  /* ---------- Sections ---------- */
+  section.block { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+  section.block:first-of-type { border-top: 0; }
+  .split { display: grid; grid-template-columns: 240px 1fr; gap: 2rem 4rem; align-items: start; }
+  .split > h2 {
+    font-family: var(--display); font-weight: 600; font-size: 1.7rem; letter-spacing: -.02em;
+    line-height: 1.15; margin: 0; position: sticky; top: 96px;
+  }
+  .content { max-width: 44rem; }
+  .content p { margin: 0 0 1rem; }
+
+  .focus { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
+  .focus span { border-left: 3px solid var(--aurora); padding: .1rem .9rem; font-weight: 500; }
+
+  /* Skills */
+  .skills { margin: 0; display: grid; gap: 1.6rem; }
+  .skills div { display: grid; grid-template-columns: 200px 1fr; gap: .6rem 1.5rem; align-items: baseline; padding-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
+  .skills div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip { padding: .3rem .85rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .97rem; }
+
+  /* Experience & education */
+  .entry { display: grid; gap: .3rem; }
+  .entry h3 { font-family: var(--display); font-weight: 600; font-size: 1.4rem; letter-spacing: -.01em; margin: 0; line-height: 1.25; }
+  .entry .where { color: var(--muted); font-weight: 500; }
+  .when { display: inline-block; margin-top: .6rem; padding: .25rem .8rem; border-radius: 999px; background: color-mix(in srgb, var(--aurora) 16%, transparent); color: var(--ink); font-size: .92rem; font-weight: 500; width: fit-content; }
+  .score { display: flex; align-items: baseline; gap: .7rem; margin-top: 1rem; }
+  .score b { font-family: var(--display); font-size: 2.4rem; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+  .score span { color: var(--muted); }
+
+  /* Certifications */
+  .certs { list-style: none; margin: 0; padding: 0; }
+  .certs li { padding: 1.3rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 130px 1fr; gap: .3rem 1.5rem; }
+  .certs li:first-child { padding-top: 0; }
+  .certs li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .certs .issuer { font-weight: 600; color: var(--link); }
+  .certs h3 { margin: 0 0 .25rem; font-family: var(--display); font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
+  .certs p { margin: 0; color: var(--muted); font-size: 1rem; }
+
+  /* Contact */
+  .contact-list { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; gap: .9rem; }
+  .contact-list li { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; align-items: baseline; }
+  .contact-list span { color: var(--muted); font-weight: 500; }
+  .contact-list a { font-weight: 600; font-size: 1.1rem; word-break: break-word; }
+  .langs { color: var(--muted); }
+  .langs b { color: var(--ink); font-weight: 600; }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: .95rem; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    nav ul li:not(:last-child) { display: none; }
+    .split { grid-template-columns: 1fr; gap: 1.4rem; }
+    .split > h2 { position: static; }
+    .skills div, .certs li, .contact-list li { grid-template-columns: 1fr; }
+    section.block { padding: 3.2rem 0; }
+    .hero-inner { padding: 4rem 0 9rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Sriram S</a>
+    <div class="right">
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-btn" id="theme" type="button" aria-label="Switch between light and dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <svg class="ridge" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0,200 L120,140 L220,190 L360,90 L480,180 L600,120 L720,200 L860,100 L980,170 L1100,110 L1240,190 L1340,140 L1440,180 L1440,320 L0,320Z"/>
+      <path class="mid" d="M0,250 L140,190 L260,240 L400,170 L540,250 L700,180 L820,250 L960,200 L1100,260 L1240,200 L1440,250 L1440,320 L0,320Z"/>
+      <path class="front" d="M0,290 L200,265 L420,295 L640,270 L900,300 L1160,272 L1440,295 L1440,320 L0,320Z"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="hello">Hi, I'm</p>
+        <h1>Sriram S</h1>
+        <p class="role">Aspiring Generative AI developer and AI data analyst</p>
+        <p class="lede">I'm a Computer Science with AI student in Chennai. I like turning data into clear insights and building AI-powered tools that solve real problems.</p>
+        <div class="actions">
+          <a class="btn solid" href="mailto:s.sriram0627@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email me
+          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/s-sriram0627" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.75 9.75h3.8v1.6h.06c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.55 4.77 5.87V21h-4v-5.2c0-1.24-.02-2.84-1.8-2.84-1.8 0-2.08 1.35-2.08 2.75V21h-4z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="block" id="about">
+    <div class="wrap split">
+      <h2>About</h2>
+      <div class="content">
+        <p>I'm an aspiring Generative AI developer and AI data analyst with a strong interest in artificial intelligence, data analytics and machine learning.</p>
+        <p>I'm looking for opportunities to apply my technical and problem-solving skills, build AI-powered solutions, find insights in data and gain industry experience while I keep learning emerging AI technologies.</p>
+        <div class="focus" aria-label="Areas of interest">
+          <span>Artificial Intelligence</span>
+          <span>Generative AI</span>
+          <span>Data Analytics</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="block" id="skills">
+    <div class="wrap split">
+      <h2>Skills</h2>
+      <dl class="skills content">
+        <div>
+          <dt>Programming</dt>
+          <dd><span class="chip">Python</span><span class="chip">Java</span></dd>
+        </div>
+        <div>
+          <dt>Web</dt>
+          <dd><span class="chip">HTML</span><span class="chip">CSS</span></dd>
+        </div>
+        <div>
+          <dt>Data analysis and visualization</dt>
+          <dd><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></dd>
+        </div>
+        <div>
+          <dt>Machine learning</dt>
+          <dd><span class="chip">Scikit-learn</span></dd>
+        </div>
+        <div>
+          <dt>Tools and platforms</dt>
+          <dd><span class="chip">Power BI</span><span class="chip">GitHub</span><span class="chip">PowerPoint</span></dd>
+        </div>
+        <div>
+          <dt>Personal</dt>
+          <dd><span class="chip">Team collaboration</span><span class="chip">Communication</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="block" id="experience">
+    <div class="wrap split">
+      <h2>Experience</h2>
+      <div class="content entry">
+        <h3>Data Scientist Intern</h3>
+        <span class="where">Big Bucks Innovation Pvt. Ltd.</span>
+        <span class="when">May 2026 – June 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="block" id="education">
+    <div class="wrap split">
+      <h2>Education</h2>
+      <div class="content entry">
+        <h3>Bachelor of Science in Computer Science with Artificial Intelligence</h3>
+        <span class="where">S.I.V.E.T College, Chennai</span>
+        <span class="when">2024 – 2027</span>
+        <div class="score"><b>76%</b><span>in the last semester</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="block" id="certifications">
+    <div class="wrap split">
+      <h2>Certifications</h2>
+      <ul class="certs content">
+        <li>
+          <span class="issuer">IBM</span>
+          <div>
+            <h3>Generative AI</h3>
+            <p>Fundamentals of large language models, prompt engineering and practical applications of generative AI.</p>
+          </div>
+        </li>
+        <li>
+          <span class="issuer">IBM</span>
+          <div>
+            <h3>Data Analytics</h3>
+            <p>Hands-on data analysis, visualization and interpretation with industry-relevant tools and methods.</p>
+          </div>
+        </li>
+        <li>
+          <span class="issuer">Oracle</span>
+          <div>
+            <h3>Front End Development</h3>
+            <p>Oracle-accredited training in modern front-end development practices and web technologies.</p>
+          </div>
+        </li>
+        <li>
+          <span class="issuer">Naan Mudhalvan</span>
+          <div>
+            <h3>Front End Development</h3>
+            <p>A Government of Tamil Nadu initiative covering HTML, CSS, JavaScript and responsive web design.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block" id="contact">
+    <div class="wrap split">
+      <h2>Contact</h2>
+      <div class="content">
+        <p>I'm open to internships and entry-level roles in generative AI and data analytics. Get in touch through any of these.</p>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:s.sriram0627@gmail.com">s.sriram0627@gmail.com</a></li>
+          <li><span>Phone</span><a href="tel:+917010729323">+91 70107 29323</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/s-sriram0627" target="_blank" rel="noopener">linkedin.com/in/s-sriram0627</a></li>
+        </ul>
+        <p class="langs"><b>Languages:</b> Tamil, English</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Sriram S</span>
+    <span>Chennai, India</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme');
+    btn.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme');
+      if (!current) {
+        current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+</body>
+</html>
